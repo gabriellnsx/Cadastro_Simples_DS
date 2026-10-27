@@ -10,6 +10,8 @@ login_usuario = ""
 
 #Apenas a tela de Visualização
 while True:
+
+    controle_cadastro = "2"
     print("===================")
     print("Sistema de Cadastro")
     print("===================")
@@ -23,14 +25,21 @@ while True:
     #Se o usuario digitar o Valor 1, vai ser exebido
     #  a ação abaixo:
     if (opcao == "1"):
-        print("==========================")
-        print("=====Tela de Cadastro=====")
-        print("==========================")
-        nome =input("Digite o seu nome: ")
-        idade =input("Digite a sua idade: ")
-        usuario =input ("Digite o seu usuario: ")
-        senha =input("Digite a sua senha  ")
-        print("\n cadastro realizado!\n")
+        while controle_cadastro != "1":
+            print("==========================")
+            print("=====Tela de Cadastro=====")
+            print("==========================")
+            nome =input("Digite o seu nome: ")
+            idade =input("Digite a sua idade: ")
+            usuario =input ("Digite o seu usuario: ")
+            senha =input("Digite a sua senha  ")
+  
+            controle_cadastro = input("\n Você deseja voltar para a tela anterior ?\n 1)-Voltar para o menu anterior;\n Digite qual quer tecla para refazer o cadastro;\n")
+
+        if (controle_cadastro == "1"):
+            print("\n Cadastro realizado!\n")
+        else:
+            print("Valor digitado inválido, faça o cadastro novamente")
     #Se digititar 2, abre a tela de login
     elif (opcao == "2"):
         print("=========================")
@@ -56,11 +65,11 @@ while True:
                 print("=====================\n")
                 #Mostrar dados do usuário
                 print("Nome de usuário: ", nome)
-                print("Idade do usuário: ", idade)
-                print("Senha do usuário: ", senha)
             elif(usuario_opcao == "2"):
                 print("\n você está voltando para o menu anterior")
                 break
+            elif(usuario_opcao == "3"):
+                senha = input("\nDigite a nova senha: ")
             else:
                 print("\n Opçaõ digitada invalida, use os números do menu!")
      #Se não estiver correto entra no caso abaixo
